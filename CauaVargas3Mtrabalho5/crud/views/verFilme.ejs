@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head'); %>
+    <style>
+        .form-container {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(181, 182, 117);
+            border-radius: 20px;
+            padding: 100px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        }
+        .img {
+            width: 100%;
+            height: 870px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(181, 182, 117);">
+    <header>
+        <%- include('menu'); %>
+    </header>
+    <div class="container my-5">
+        <h1 class="text-center">Visualização de Filmes</h1>
+        <div class="form-container">
+            <% dadosFilme.forEach(function(dados) { %>
+                <div class="row">
+                    <div class="col-12 text-right">
+                        <a href="/edit/<%=dados.id %>">Editar</a>
+                        <a href="/delete/<%=dados.id %>">Deletar</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="main-title text-center"><%= dados.nomeFilme %></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img src="imagens/<%=dados.imagem %>" style=max-width:100%; max-height:100%; width: auto; height: auto;; class="card.imagem.top" alt = "imagem"></a>
+                    </div>
+                    <div class="col-md-9 text-center" >
+                        <p>Diretor: <%= dados.diretor %></p>
+                        <p>Ano: <%= dados.ano %></p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

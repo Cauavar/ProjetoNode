@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('head'); %>
+    <style>
+        .form-container {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(181, 182, 117);
+            border-radius: 20px;
+            padding: 100px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            }
+    </style>
+</head>
+    
+
+<body>
+    <body style="background-color: rgb(181, 182, 117);"> 
+        <div class="container my-5">
+            <h1 class="text-center"> Editar </h1>
+            <div class="form-container">
+        <form action="/createFilme" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Nome do Filme:</label>
+                <input type="text" class="form-control" id="name" name="nomeFilme">
+            </div>
+            <div class="form-group">
+                <label for="name">Diretor:</label>
+                <input type="text" class="form-control" id="name" name="diretor">
+            </div>
+            <div class="form-group">
+                <label for="name">Ano:</label>
+                <input type="number" class="form-control" id="name" name="ano">
+            </div>
+            <div class="form-group"> <label for="pwd">Imagem:</label>
+                <input type="file" class="form-control" name="imagem" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <button><a href="/" class="material-icons ">arrow_back</a></button>
+    </div>
+    <br>
+</body>
+
+</html>
